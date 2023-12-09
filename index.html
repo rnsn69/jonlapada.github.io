@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Portfolio | Jon Lapada</title>
+    <!--CSS-->
+    <style>
+        * {box-sizing: border-box;}
+        
+        body { 
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: #dbf3fa;
+        }
+        
+        .header {
+          overflow: hidden;
+          background-color: #0a0325;
+          padding: 20px 10px;
+          position: relative;
+          z-index: 2;
+        }
+        
+        .header a {
+          float: left;
+          color: rgb(238, 228, 228);
+          text-align: center;
+          padding: 12px;
+          text-decoration: none;
+          font-size: 18px; 
+          line-height: 25px;
+          border-radius: 4px;
+        }
+        
+        .header a.logo {
+          font-size: 25px;
+          font-weight: bold;
+        }
+        
+        .header a:hover {
+          background-color: rgb(236, 219, 65);
+          color: black;
+        }
+        
+        .header-right {
+          float: right;
+        }
+        
+        @media screen and (max-width: 500px) {
+          .header a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+          
+          .header-right {
+            float: none;
+          }
+        }
+
+        .intro {
+          color: #0a0325;
+          position: absolute;
+          left: 60px;
+          top: 200px;
+          line-height: 11px;
+        }
+
+        .button1 {
+          background-color: #dbf3fa;
+          color: #0a0325;
+          border-radius: 10px;
+          padding: 16px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          transition-duration: 0.5s;
+          cursor: pointer;
+        }
+
+        .button1:hover {
+          background-color: #d81159;
+          color: white;
+        }
+
+        .about {
+          color: #0a0325;
+          position: absolute;
+          left: 60px;
+          top: 570px;
+          line-height: 11px;
+        }
+
+        .skills {
+          color: #0a0325;
+          position: absolute;
+          left: 60px;
+          top: 900px;
+          line-height: 11px;
+        }
+
+        .contact {
+          color: #0a0325;
+          position: absolute;
+          left: 60px;
+          top: 1150px;
+          line-height: 11px;
+        }
+
+        .content {
+          padding: 17px;
+          z-index: 1;
+        }
+
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+
+        .sticky + .content {
+          padding top: 102px;
+        }
+
+        .fa {
+          padding: 20px;
+          font-size: 35px;
+          width: 75px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 2px;
+          border-radius: 20%;
+        }
+
+       .fa:hover {
+          opacity: 0.7;
+        }
+
+       .fa-facebook {
+          background: #3B5998;
+          color: white;
+        }
+
+      .fa-twitter {
+         background: #55ACEE;
+         color: white;
+        }
+
+      .fa-linkedin {
+        background: #007bb5;
+        color: white;
+      }
+
+      .content {
+        padding: 90px;
+      }
+        </style>
+
+</head>
+<body>
+  <div class = "header" id="etoheader">
+      <a href="ransonportfolio.html" class="logo">My Portfolio</a>
+      <div class="header-right">
+          <a class="active" href="ransonportfolio.html">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          
+      </div>
+  </div> 
+  <div class = "content">
+  <div class = "intro">
+    <h1 style="font-size: 23px;">Hello,</h1>
+    <h2 style="font-size: 46px;">I'm Jon Ranson Lapada</h2>
+    <h3 style="font-size: 30px;">Aspiring Software Developer</h3>
+    <h4 style="font-size: 24px;">From the Philippines</h4>
+    <button class="button1" onclick="imyFunction()">Get to know me</button>
+    <script>
+    // pede mo palitan yung alert method ng location.href=""
+    function imyFunction() {
+      alert("Hello po")
+    }
+    </script>
+  </div>
+
+  <div class = "about" id = "about">
+    <h5 style="font-size: 30px;">About Me</h5>
+    <p style = "font-size: 21px;">Hello, World! I am Jon Ranson Lapada. Currently, I'm an undergraduate student pursuing BS Business Administration Major in Financial Management.</p>
+    
+  </div>
+
+  <div class = "skills" id = "skills">
+    <h5 style = "font-size: 30px;">My Skills</h5>
+    <p style = "font-size: 21px;">Under Construction!!</p>
+  </div>
+
+  <div class = "contact" id = "contact">
+    <h5 style="font-size: 30px;">Contact Me</h5>
+    <a href="https://web.facebook.com/jonransonvillanueva.lapada" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="https://www.linkedin.com/in/jon-ranson-lapada-30051a218/" class="fa fa-linkedin"></a>
+
+  </div>
+  </div>
+
+<script>
+window.onscroll = function() {myFunction()};
+var header = document.getElementById("etoheader");
+var sticky = header.offsetTop;
+
+function myFunction(){
+  if (window.pageYOffset > sticky){
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+</html>
